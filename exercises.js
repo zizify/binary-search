@@ -13,7 +13,7 @@ letterTree.insert('F', 0);
 letterTree.insert('Z', 0);
 letterTree.insert('O', 0);
 letterTree.insert('S', 0);
-letterTree.insert('R', 0);
+letterTree.insert('L', 0);
 
 let height = binary => {
 	let node = binary;
@@ -29,8 +29,32 @@ let height = binary => {
 	return h2;
 };
 
-console.log(height(letterTree));
+// console.log(height(letterTree));
+function isBinary(tree) {
+	let node = tree;
+    
+	if (node.left) {
+		if (node.left.key > node.key) {
+			return false;
+		}
+        
+		if (!isBinary(node.left)) {
+			return false;
+	    }
+	}
 
+	if (node.right) {
+		if (node.right.key < node.key) {
+			return false;
+		}
+        
+		if (!isBinary(node.right)) {
+			return false;
+	    }
+	}
+	return true;
+}
 
+console.log(isBinary(letterTree));
 
 
