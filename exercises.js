@@ -15,6 +15,7 @@ letterTree.insert('O', 0);
 letterTree.insert('S', 0);
 letterTree.insert('L', 0);
 
+//HEIGHT CHECKER
 let height = binary => {
 	let node = binary;
 	if (node === null) {
@@ -30,6 +31,8 @@ let height = binary => {
 };
 
 // console.log(height(letterTree));
+
+//BINARITY CHECKER
 function isBinary(tree) {
 	let node = tree;
     
